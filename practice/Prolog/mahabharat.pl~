@@ -1,0 +1,9 @@
+son(bhim, pandu).
+son(yudhishthir, pandu).
+son(duryodhan, dhritarashtra).
+brother(pandu, dhritarashtra).
+
+brother(X,Y) :- brother(Y,X), not(=(X, Y)).
+brother(X,Y) :- son(X,Z), son(Y,Z), not(=(X, Y)).
+
+uncle(X,Y) :- son(Y,F), brother(F,X).

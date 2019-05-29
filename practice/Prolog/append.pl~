@@ -1,0 +1,3 @@
+myappend([], [], []) :- !.
+myappend([], X, X).
+myappend([X|Y], Z, [X|L]) :- myappend(Y, Z, L).
